@@ -17,7 +17,7 @@ services:
     networks:
       - grind-backend-net
 
-  grind-sys-backend:
+  sys-backend:
     container_name: grind-sys-backend
     build: ./grind-sys-backend
     restart: unless-stopped
@@ -33,7 +33,7 @@ services:
     networks:
       - grind-backend-net
 
-  grind-sys-frontend:
+  sys-frontend:
     container_name: grind-sys-frontend
     build: ./grind-sys-frontend
     volumes:
@@ -45,19 +45,19 @@ services:
     networks:
       - grind-frontend-net
     depends_on:
-      - grind-sys-backend
+      - sys-backend
 
   user-frontend:
     container_name: grind-user-frontend
-    build: ./user-frontend
+    build: ./grind-user-frontend
     volumes:
-      - ./user-frontend:/usr/src/app
+      - ./grind-user-frontend:/usr/src/app
     ports:
       - "3001:3000"
     networks:
       - grind-frontend-net
     depends_on:
-      - grind-sys-backend
+      - sys-backend
 
 volumes:
   postgres-data:

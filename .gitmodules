@@ -1,0 +1,9 @@
+[submodule "grind-sys-backend"]
+	path = grind-sys-backend
+	url = https://github.com/DOST-Caraga/grind-sys-backend.git
+[submodule "grind-sys-frontend"]
+	path = grind-sys-frontend
+	url = https://github.com/DOST-Caraga/grind-sys-frontend.git
+[submodule "grind-user-frontend"]
+	path = grind-user-frontend
+	url = https://github.com/DOST-Caraga/grind-user-frontend.git
